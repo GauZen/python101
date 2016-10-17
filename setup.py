@@ -20,4 +20,11 @@ setup(
     license='BSD',
     author='Dominik Steinberger',
     author_email='dominik.steinberger@fau.de',
-    description='Python tutorial for materials scientists.')
+    description='Python tutorial for materials scientists.',
+    install_requires=[
+        'Sphinx',
+        'sphinx_rtd_theme',
+        'numpy',
+        'matplotlib',
+        'scipy'
+    ])

@@ -1,0 +1,199 @@
+.. _sec_functions:
+
+=========
+Functions
+=========
+
+Introduction
+============
+
+Some tasks in your code may be performed a lot of times. Say you want to say
+"Hello" not only to the world but to a lot of people. You would have to write
+
+.. code-block:: python
+
+    print('Hello, {name}!')
+
+an awful lot of times. It would be way shorter if we were able to write
+
+.. code-block:: python
+
+    greet('{name}')
+
+and it would just print ``Hello, {name}!``. OK, it is not that shorter... But
+imagine you want to find the roots of some functions. There is way more code
+involved and having a nice little shortcut to execute all that code without
+writing it over and over again would be nice, wouldn't it? This is in the
+spirit of the DRY_ principle! As a nice side effect you only have to change the
+routine in one place of your code instead of all of them if you find a bug or
+want to use some more sophisticated routine.
+
+But even if you do only use a code snippet once in your program it may be more
+declarative to give it a short name and hide the implementation somewhere else.
+This also helps you to `divide and conquer`_ larger problems!
+
+The nice thing is that you already know a function: :func:`print`!
+You used it like this:
+
+.. code-block:: python
+
+    print('Hello, World!')
+
+Let's take a closer look at the parts that make up a function.
+
+.. _DRY: https://en.wikipedia.org/wiki/Don't_repeat_yourself
+.. _divide and conquer:
+    https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms
+
+
+Components of a Function
+========================
+
+Name
+----
+
+Most functions have names [#lambdas]_. The name of :func:`print` is -- never
+would have guessed -- *print*. Printing the function without calling it reveals
+that it is a built-in function:
+
+>>> print(print)
+<built-in function print>
+
+There are a lot more :ref:`python:built-in-funcs`, among them, for example,
+:class:`float() <float>`.
+
+
+Positional Arguments
+--------------------
+
+:class:`float() <float>` is a function that lets you convert a number or a
+string that represents a number to a floating point number. Its interface is
+defined as
+
+.. function:: float(x)
+    :noindex:
+
+where ``x`` is its argument.
+To be more precise it is its *positional argument*.
+By calling :class:`float() <float>` and passing an integer as argument the
+result is the corresponding float:
+
+>>> float(1)
+1.0
+>>> float(-2)
+-2.0
+
+You can also pass strings that represent numbers to :class:`float() <float>`:
+
+>>> float('1')
+1.0
+>>> float('-2')
+-2.0
+>>> float('1.500')
+1.5
+>>> float('1e-2')
+0.01
+>>> float('+1E6')
+1000000.0
+
+A similar function also exists for integer. It is the function
+:class:`int() <int>`.
+
+Keyword Arguments
+-----------------
+
+:class:`int() <int>` is a function that lets you convert a number or a string
+that represents a number to an integer. Its interface is defined as
+
+.. function:: int(x, base=10)
+    :noindex:
+
+where ``x`` is its *positional argument* and ``base`` is its *keyword
+argument*. While positional arguments must be passed to a function keyword
+arguments are optional and provide default values. The default value of
+``base`` is ``10``.
+
+When passing floats to :class:`int() <int>` everything after the decimal point
+is dropped:
+
+>>> int(1.0)
+1
+>>> int(-2.0)
+-2
+>>> int(1.3)
+1
+>>> int(1.8)
+1
+>>> int(-1.3)
+-1
+>>> int(-1.8)
+-1
+
+When passing strings to :class:`int() <int>` the ``base`` keyword argument is
+used to indicate how the number should be interpreted in terms of which base it
+is given in.
+
+>>> int('1')
+1
+>>> int('-2')
+-2
+>>> int('101010')
+101010
+>>> int('101010', base=2)
+42
+
+You do not have to write out the keyword arguments, they will be interpreted in
+the same order as they are in the interface:
+
+>>> int('101010', 2)
+42
+
+But you can not convert strings that represent floating point numbers to
+integers like this:
+
+>>> int('1.0')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '1.0'
+
+For this you would have to chain :class:`int() <int>` and
+:class:`float() <float>`:
+
+>>> int(float('1.0'))
+1
+
+
+Defining a Function
+===================
+
+>>> def greet(name):
+...     print('Hello', name)
+...
+>>> greet('World')
+Hello World
+>>> greet('you')
+Hello you
+
+>>> def add_reciprocal(a, b):
+...     return 1/a + 1/b
+>>> add_reciprocal(4, 8)
+0.375
+
+
+Summary
+=======
+
+.. highlights::
+
+    * Functions can make your life easier by streamlining repeated tasks or giving
+      a name to complex programming logic.
+    * Functions may have two different kinds of arguments, *positional arguments*
+      that must be given to the function and *keyword arguments* who provide
+      default values.
+    * Functions are defined using the ``def`` keyword.
+    * Functions may return values by using the ``return`` keyword.
+
+.. rubric:: Footnotes
+
+.. [#lambdas] :ref:`python:lambdas` are the exception to the rule as they
+              define anonymous functions.
