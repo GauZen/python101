@@ -28,3 +28,4 @@ commands and what they do.
     containers
     flow_control
     functions
+    strings
