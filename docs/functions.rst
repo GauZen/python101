@@ -99,6 +99,7 @@ You can also pass strings that represent numbers to :class:`float() <float>`:
 A similar function also exists for integer. It is the function
 :class:`int() <int>`.
 
+
 Keyword Arguments
 -----------------
 
@@ -166,6 +167,10 @@ For this you would have to chain :class:`int() <int>` and
 Defining a Function
 ===================
 
+A function is defined by starting with the ``def`` keyword. Subsequently you
+provide the name of the function and its arguments in paranthesis. You can then
+use it like the functions you already used.
+
 >>> def greet(name):
 ...     print('Hello', name)
 ...
@@ -179,6 +184,55 @@ Hello you
 >>> add_reciprocal(4, 8)
 0.375
 
+To provide keyword arguments you let the argument have a default value by
+assigning a value to it:
+
+>>> def name_and_favorite_food(name, favorite_food='pizza'):
+...     return name + "'s favorite food is " + favorite_food + '.'
+...
+>>> name_and_favorite_food('Dominik')
+"Dominik's favorite food is pizza."
+>>> name_and_favorite_food('Stefan', 'kimchi')
+"Stefan's favorite food is kimchi."
+
+If you execute them in the interactive Python interpreter the value returned by
+a function is automatically displayed if you do not assign it to a variable. It
+is important to know that the ``return`` keyword is used to make the value
+accessible to the outer scope, that is outside of the function. See the
+following example, where we first do not have a return statement:
+
+>>> def is_positive_without_return(x):
+...     if x >= 0:
+...         print(True)
+...     else:
+...         print(False)
+...
+>>> is_positive_without_return(1)
+True
+>>> is_positive_without_return(-1)
+False
+>>> a = is_positive_without_return(1)
+True
+>>> print(a)
+None
+
+As you can see the variable ``a`` has no value at all. If you want ``a`` to
+receive the result of the function you have to return it, not print it:
+
+>>> def is_positive_without_return(x):
+...     if x >= 0:
+...         return True
+...     else:
+...         return False
+...
+>>> is_positive_without_return(1)
+True
+>>> is_positive_without_return(-1)
+False
+>>> a = is_positive_without_return(1)
+>>> print(a)
+True
+
 
 Summary
 =======
@@ -188,7 +242,7 @@ Summary
     * Functions can make your life easier by streamlining repeated tasks or giving
       a name to complex programming logic.
     * Functions may have two different kinds of arguments, *positional arguments*
-      that must be given to the function and *keyword arguments* who provide
+      that must be given to the function and *keyword arguments* which provide
       default values.
     * Functions are defined using the ``def`` keyword.
     * Functions may return values by using the ``return`` keyword.
