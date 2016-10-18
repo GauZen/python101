@@ -29,3 +29,5 @@ commands and what they do.
     flow_control
     functions
     strings
+    file_io
+    numpy/index
