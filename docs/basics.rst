@@ -304,7 +304,7 @@ For this the :func:`input` can be used.
 
     print('What is your name?')
     name = input()
-    print('Nice to meet you,' name)
+    print('Nice to meet you,', name)
 
 .. note::
 
