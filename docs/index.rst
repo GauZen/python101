@@ -31,3 +31,4 @@ commands and what they do.
     strings
     file_io
     numpy/index
+    matplotlib/index

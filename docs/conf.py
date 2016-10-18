@@ -40,6 +40,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
+    'matplotlib.sphinxext.plot_directive'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -392,3 +393,30 @@ import numpy as np
 import numpy.linalg
 import matplotlib.pyplot as plt
 """
+
+
+# Matplotlib.sphinxextension
+# ==========================
+plot_include_source = False
+plot_html_show_source_link = True
+plot_html_show_formats = False
+plot_formats = [
+    'png'
+]
+plot_rcparams = {
+    'image.cmap': 'viridis',
+    'savefig.bbox': 'tight',
+    'savefig.transparent': True,
+    'lines.linewidth': 2,
+    'axes.color_cycle': [
+        '#E41A1C',
+        '#377EB8',
+        '#4DAF4A',
+        '#984EA3',
+        '#FF7F00',
+        '#FFFF33',
+        '#A65628',
+        '#F781BF',
+        '#999999'
+    ]
+}
