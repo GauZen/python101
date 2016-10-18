@@ -193,6 +193,15 @@ Summary
     * Functions are defined using the ``def`` keyword.
     * Functions may return values by using the ``return`` keyword.
 
+
+Tasks
+=====
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/heaviside_step_function
+
 .. rubric:: Footnotes
 
 .. [#lambdas] :ref:`python:lambdas` are the exception to the rule as they
