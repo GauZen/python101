@@ -372,8 +372,8 @@ Summary
       functionality using the :ref:`import <import>` statement.
 
 
-Tasks
-=====
+Exercises
+=========
 
 #. Write a script that asks the user for the radius of a circle and
    subsequently shows the circumference and the area of the circle in the

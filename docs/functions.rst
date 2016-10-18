@@ -234,6 +234,61 @@ False
 True
 
 
+Functions as Function Arguments
+===============================
+
+You are able to pass almost anything to a function---even functions itself!
+This is especially useful if you want to do data fitting or root finding of
+mathematical functions.
+
+.. testcode::
+
+    def format_heading(text):
+        return '\n' + text + '\n' + '='*len(text) + '\n'
+
+    def prettify(sections, header_formatter):
+        # Assume that `sections` is a list of dictionaries with the keys
+        # ``heading`` for the heading text and ``content`` for the content
+        # of the section.
+        # Assume that the `header_formatter` is a function that takes a string
+        # as argument and formats it in a way that is befitting for a heading.
+        text = ''
+        for section in sections:
+            heading = section['heading']
+            content = section['content']
+            text += format_heading(heading) + content + '\n'
+        # Before returning it we make shure that all surrounding whitespace is
+        # gone.
+        return text.strip()
+
+    secs = [
+        {
+            'heading': 'Introduction',
+            'content': 'In this section we introduce some smart method to teach Python.'
+        },
+        {
+            'heading': 'Results',
+            'content': 'More than 42 % of participants in this study learned Python.'
+        }
+    ]
+
+    pretty_text = prettify(secs, header_formatter=format_heading)
+    print(pretty_text)
+
+So as you can see the argument ``header_formatter`` is just treated as if it
+was a function. If you run this script the output will be:
+
+.. testoutput::
+
+    Introduction
+    ============
+    In this section we introduce some smart method to teach Python.
+
+    Results
+    =======
+    More than 42 % of participants in this study learned Python.
+
+
 Summary
 =======
 
@@ -248,13 +303,14 @@ Summary
     * Functions may return values by using the ``return`` keyword.
 
 
-Tasks
-=====
+Exercises
+=========
 
 .. toctree::
     :maxdepth: 1
 
     exercises/heaviside_step_function
+    exercises/newtons_method_1D
 
 .. rubric:: Footnotes
 
