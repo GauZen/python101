@@ -10,7 +10,7 @@ How to install Python depends a lot on your operating system.
 macOS
 =====
 
-#. Install the current version of Xcode_ on your Mac.
+#. Install the current version of Xcode_ on your Mac via the `Mac App Store`_.
 
 #. Open your terminal and install the Xcode Command Line Utilities and run
 
@@ -34,6 +34,7 @@ macOS
 
 
 .. _Xcode: https://developer.apple.com/xcode/
+.. _Mac App Store: https://itunes.apple.com/de/app/xcode/id497799835?mt=12
 .. _MacPorts: https://www.macports.org/install.php
 
 
