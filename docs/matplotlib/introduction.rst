@@ -26,14 +26,3 @@ And subsequently all plotting commands are called using the prefix ``plt``.
 
 Rather than exercises that want you to get some results you are shown simple
 examples for the most common types of plots.
-
-.. rubric:: Exercises
-
-.. toctree::
-    :maxdepth: 1
-
-    line_plots
-    scatter_plots
-    pcolormesh_plots
-    contour_plots
-    contourf_plots

@@ -21,15 +21,38 @@ commands and what they do.
 
 .. toctree::
     :maxdepth: 1
+    :caption: Shell
 
-    installing_python
-    shell
-    basics
-    comments
-    containers
-    flow_control
-    functions
-    strings
-    file_io
-    numpy/index
-    matplotlib/index
+    shell/shell
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Python
+
+    python/installing_python
+    python/basics
+    python/comments
+    python/containers
+    python/flow_control
+    python/functions
+    python/strings
+    python/file_io
+
+.. toctree::
+    :maxdepth: 1
+    :caption: NumPy
+
+    numpy/introduction
+    numpy/array
+    numpy/math
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Matplotlib
+
+    matplotlib/introduction
+    matplotlib/line_plots
+    matplotlib/scatter_plots
+    matplotlib/pcolormesh_plots
+    matplotlib/contour_plots
+    matplotlib/contourf_plots
