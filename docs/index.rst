@@ -22,6 +22,7 @@ commands and what they do.
 .. toctree::
     :maxdepth: 1
 
+    installing_python
     shell
     basics
     comments
