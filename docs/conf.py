@@ -408,6 +408,18 @@ plot_rcparams = {
     'savefig.bbox': 'tight',
     'savefig.transparent': True,
     'lines.linewidth': 2,
+    'legend.frameon': False,
+    'text.color': '#404040',
+    'font.size': 13,
+    'font.sans-serif': [
+        'Lato',
+        'proxima-nova',
+        'Helvetica Neue',
+        'Arial',
+        'sans-serif'
+    ],
+    'axes.edgecolor': '#404040',
+    'axes.labelcolor': '#404040',
     'axes.color_cycle': [
         '#E41A1C',
         '#377EB8',
@@ -418,5 +430,8 @@ plot_rcparams = {
         '#A65628',
         '#F781BF',
         '#999999'
-    ]
+    ],
+    'xtick.color': '#404040',
+    'ytick.color': '#404040',
+    'grid.color': '#404040'
 }

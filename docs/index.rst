@@ -56,3 +56,10 @@ commands and what they do.
     matplotlib/pcolormesh_plots
     matplotlib/contour_plots
     matplotlib/contourf_plots
+
+.. toctree::
+    :maxdepth: 1
+    :caption: SciPy
+
+    scipy/introduction
+    scipy/fitting_curves
