@@ -282,7 +282,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Python101.tex', 'Python 101 Documentation',
+    (master_doc, 'Python101.tex', 'Python 101',
      'Dominik Steinberger', 'manual'),
 ]
 
@@ -324,7 +324,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'python101', 'Python 101 Documentation',
+    (master_doc, 'python101', 'Python 101',
      [author], 1)
 ]
 
@@ -339,7 +339,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Python101', 'Python 101 Documentation',
+    (master_doc, 'Python101', 'Python 101',
      author, 'Python101', 'Python tutorial for materials scientists.',
      'Miscellaneous'),
 ]
