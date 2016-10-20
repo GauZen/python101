@@ -121,18 +121,28 @@ use the ``write()`` method of the file object to write to the file:
         f.write('This is smart.')
         f.write('This is even smarter.')
 
-Now the content of your file would be ::
+Now the content of your file would be
+
+.. code-block:: text
 
     This is smart.This is even smarter.
 
 Which is not nicely formatted. So you have to take care that you add the
-newline character ``\n`` and spaces accordingly.
+newline character ``\n`` and spaces accordingly:
 
 .. code-block:: python
 
     with open('my_first_file.txt', 'w') as f:
         f.write('This is smart.\n')
         f.write('This is even smarter.\n')
+
+
+Subsequently the content of your file would be
+
+.. code-block:: text
+
+    This is smart.
+    This is even smarter.
 
 
 Summary
