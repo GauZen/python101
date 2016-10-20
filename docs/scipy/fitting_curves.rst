@@ -107,3 +107,12 @@ all the parameters.
     it is hence a good idea to give it a good starting point. this can be done
     using the ``p0`` argument of :func:`~scipy.optimize.curve_fit`. In some
     cases this is even necessary.
+
+
+Exercises
+=========
+
+.. toctree::
+    :maxdepth: 1
+
+    exercises/fitting_a_frequency_measurement
