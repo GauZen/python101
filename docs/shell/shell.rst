@@ -234,8 +234,8 @@ Summary
         contents you have to use it with the ``-r`` option: ``rm -r $1``.
 
 
-Tasks
-=====
+Exercises
+=========
 
 #. Create an empty file called ``my_first_file.txt``
 
