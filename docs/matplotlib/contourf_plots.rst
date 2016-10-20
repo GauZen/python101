@@ -11,3 +11,4 @@ Contourf Plots
 
 
 .. plot:: pyplots/contourf_plot.py
+    :align: center

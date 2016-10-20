@@ -14,3 +14,4 @@ points a so-called scatter plot is the plot of choice. The command is
 it results in a plot showing the different data point groups:
 
 .. plot:: pyplots/scatter_plot.py
+    :align: center

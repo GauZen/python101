@@ -23,6 +23,7 @@ import datetime
 import pkg_resources
 
 import sphinx_rtd_theme
+from matplotlib import cycler
 
 # -- General configuration ------------------------------------------------
 
@@ -364,9 +365,9 @@ texinfo_documents = [
 # ===========
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.5', None),
-    'numpy': ('http://docs.scipy.org/doc/numpy/', None),
-    'scipy': ('http://docs.scipy.org/doc/scipy/reference/', None),
-    'matplotlib': ('http://matplotlib.sourceforge.net/', None)
+    'numpy': ('https://docs.scipy.org/doc/numpy/', None),
+    'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None),
+    'matplotlib': ('http://matplotlib.org/', None)
 }
 
 
@@ -403,13 +404,17 @@ plot_html_show_formats = False
 plot_formats = [
     'png'
 ]
+plot_apply_rcparams = True
+rtd_black = '#404040'
+mpl_black = '#888888'
 plot_rcparams = {
     'image.cmap': 'viridis',
     'savefig.bbox': 'tight',
     'savefig.transparent': True,
     'lines.linewidth': 2,
     'legend.frameon': False,
-    'text.color': '#404040',
+    'legend.fontsize': 'medium',
+    'text.color': rtd_black,
     'font.size': 13,
     'font.sans-serif': [
         'Lato',
@@ -418,20 +423,68 @@ plot_rcparams = {
         'Arial',
         'sans-serif'
     ],
-    'axes.edgecolor': '#404040',
-    'axes.labelcolor': '#404040',
-    'axes.color_cycle': [
-        '#E41A1C',
-        '#377EB8',
-        '#4DAF4A',
-        '#984EA3',
-        '#FF7F00',
-        '#FFFF33',
-        '#A65628',
-        '#F781BF',
-        '#999999'
-    ],
-    'xtick.color': '#404040',
-    'ytick.color': '#404040',
-    'grid.color': '#404040'
+    'axes.edgecolor': mpl_black,
+    'axes.labelcolor': mpl_black,
+    'axes.prop_cycle': cycler(
+        color=[
+            '#E41A1C',
+            '#377EB8',
+            '#4DAF4A',
+            '#984EA3',
+            '#FF7F00',
+            '#FFFF33',
+            '#A65628',
+            '#F781BF',
+            '#999999'
+        ]),
+    'xtick.color': mpl_black,
+    'ytick.color': mpl_black,
+    'grid.color': mpl_black
 }
+# plot_template = """
+# {{ source_code }}
+# {{ only_html }}
+#    {% if source_link or (html_show_formats and not multi_image) %}
+#    (
+#    {%- if source_link -%}
+#    `Source code <{{ source_link }}>`__
+#    {%- endif -%}
+#    {%- if html_show_formats and not multi_image -%}
+#      {%- for img in images -%}
+#        {%- for fmt in img.formats -%}
+#          {%- if source_link or not loop.first -%}, {% endif -%}
+#          `{{ fmt }} <{{ dest_dir }}/{{ img.basename }}.{{ fmt }}>`__
+#        {%- endfor -%}
+#      {%- endfor -%}
+#    {%- endif -%}
+#    )
+#    {% endif %}
+#    {% for img in images %}
+#    .. figure:: {{ build_dir }}/{{ img.basename }}.png
+#       {% for option in options -%}
+#       {{ option }}
+#       {% endfor %}
+#       {% if html_show_formats and multi_image -%}
+#         (
+#         {%- for fmt in img.formats -%}
+#         {%- if not loop.first -%}, {% endif -%}
+#         `{{ fmt }} <{{ dest_dir }}/{{ img.basename }}.{{ fmt }}>`__
+#         {%- endfor -%}
+#         )
+#       {%- endif -%}
+#       {{ caption }}
+#    {% endfor %}
+# {{ only_latex }}
+#    {% for img in images %}
+#    {% if 'pdf' in img.formats -%}
+#    .. image:: {{ build_dir }}/{{ img.basename }}.pdf
+#    {% endif -%}
+#    {% endfor %}
+# {{ only_texinfo }}
+#    {% for img in images %}
+#    .. image:: {{ build_dir }}/{{ img.basename }}.png
+#       {% for option in options -%}
+#       {{ option }}
+#       {% endfor %}
+#    {% endfor %}
+# """

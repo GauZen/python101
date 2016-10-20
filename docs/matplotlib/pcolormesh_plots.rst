@@ -11,3 +11,4 @@ Pcolormesh Plots
 
 
 .. plot:: pyplots/pcolormesh_plot.py
+    :align: center

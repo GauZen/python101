@@ -14,3 +14,4 @@ using it like this
 results in a line plot with both the sine and cosine:
 
 .. plot:: pyplots/line_plot.py
+    :align: center
