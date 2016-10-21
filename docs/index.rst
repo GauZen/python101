@@ -14,10 +14,17 @@ Python 101
 Welcome to the Python tutorial of the Institute of Materials Simulation. The
 goal of this tutorial is to introduce the basic tools used in our everyday
 scientific worklife by actually performing such tasks. We will start with a
-brief introduction to the `Unix Shell` in which we list the most common
+brief introduction to the *Unix Shell* in which we list the most common
 commands and what they do.
 
 .. rubric:: Contents
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Setup
+
+    setup/installing_python
+    setup/setting_up_python_101
 
 .. toctree::
     :maxdepth: 1
@@ -29,7 +36,6 @@ commands and what they do.
     :maxdepth: 1
     :caption: Python
 
-    python/installing_python
     python/basics
     python/comments
     python/containers

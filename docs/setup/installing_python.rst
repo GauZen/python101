@@ -16,13 +16,13 @@ macOS
 
    .. code-block:: shell
 
-       xcode-select --install
+       $ xcode-select --install
 
 #. Agree to the Xcode license by running
 
    .. code-block:: shell
 
-       sudo xcodebuild -license
+       $ sudo xcodebuild -license
 
 #. Install MacPorts_ for your version of macOS.
 
@@ -30,7 +30,7 @@ macOS
 
    .. code-block:: shell
 
-       sudo port install freetype libpng git hdf5 python35
+       $ sudo port install freetype libpng git hdf5 python35
 
 
 .. _Xcode: https://developer.apple.com/xcode/
@@ -45,4 +45,4 @@ Install the required packages via
 
 .. code-block:: shell
 
-    sudo apt-get install cmake gfortran git libfreetype6-dev libatlas-dev liblapack-dev libhdf5-dev python3-dev python3-venv python3-pip python3-tk
+    $ sudo apt-get install cmake gfortran git libfreetype6-dev libatlas-dev liblapack-dev libhdf5-dev python3-dev python3-venv python3-pip python3-tk
