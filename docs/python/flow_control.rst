@@ -14,7 +14,7 @@ Flow Control
     | "Oh, you're sure to do that," said the Cat, "if you only walk long
       enough."
 
-    ---Alice's Adventures in Wonderland
+    ---:title:`Alice's Adventures in Wonderland`
 
 Up until now the code war rather... underwhelming. You only executed a sequence
 of commands each and every time. But with the introduction of the control flow
