@@ -391,7 +391,6 @@ napoleon_use_keyword = True
 # =======
 doctest_global_setup = """
 import numpy as np
-import numpy.linalg
 import matplotlib.pyplot as plt
 """
 
@@ -441,50 +440,3 @@ plot_rcparams = {
     'ytick.color': mpl_black,
     'grid.color': mpl_black
 }
-# plot_template = """
-# {{ source_code }}
-# {{ only_html }}
-#    {% if source_link or (html_show_formats and not multi_image) %}
-#    (
-#    {%- if source_link -%}
-#    `Source code <{{ source_link }}>`__
-#    {%- endif -%}
-#    {%- if html_show_formats and not multi_image -%}
-#      {%- for img in images -%}
-#        {%- for fmt in img.formats -%}
-#          {%- if source_link or not loop.first -%}, {% endif -%}
-#          `{{ fmt }} <{{ dest_dir }}/{{ img.basename }}.{{ fmt }}>`__
-#        {%- endfor -%}
-#      {%- endfor -%}
-#    {%- endif -%}
-#    )
-#    {% endif %}
-#    {% for img in images %}
-#    .. figure:: {{ build_dir }}/{{ img.basename }}.png
-#       {% for option in options -%}
-#       {{ option }}
-#       {% endfor %}
-#       {% if html_show_formats and multi_image -%}
-#         (
-#         {%- for fmt in img.formats -%}
-#         {%- if not loop.first -%}, {% endif -%}
-#         `{{ fmt }} <{{ dest_dir }}/{{ img.basename }}.{{ fmt }}>`__
-#         {%- endfor -%}
-#         )
-#       {%- endif -%}
-#       {{ caption }}
-#    {% endfor %}
-# {{ only_latex }}
-#    {% for img in images %}
-#    {% if 'pdf' in img.formats -%}
-#    .. image:: {{ build_dir }}/{{ img.basename }}.pdf
-#    {% endif -%}
-#    {% endfor %}
-# {{ only_texinfo }}
-#    {% for img in images %}
-#    .. image:: {{ build_dir }}/{{ img.basename }}.png
-#       {% for option in options -%}
-#       {{ option }}
-#       {% endfor %}
-#    {% endfor %}
-# """

@@ -11,18 +11,40 @@ File IO
     import builtins
     from contextlib import contextmanager
 
-    csv_file_txt = StringIO(
-        '1, 2, 3\n'
-        '4, 5, 6\n'
-        '7, 8, 9\n')
+    _files = {
+        'csv_file.txt': StringIO(
+            '1, 2, 3\n'
+            '4, 5, 6\n'
+            '7, 8, 9\n')
+    }
 
-    @contextmanager
-    def open(file, mode='r', buffering=-1, encoding=None, errors=None,
-             newline=None, closefd=True, opener=None):
-        file = file.replace('.', '_')
-        stringio = globals()[file]
-        yield stringio
-        stringio.seek(0)
+    class open:
+        def __init__(
+                self, file, mode='r', buffering=-1, encoding=None, errors=None,
+                newline=None, closefd=True, opener=None):
+            try:
+                self.stringio = _files[file]
+            except KeyError:
+                self.stringio = StringIO()
+
+        def read(self, size=None):
+            return self.stringio.read(size)
+
+        def write(self, s):
+            return self.stringio.write(s)
+
+        def close(self):
+            self.stringio.seek(0)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            self.close()
+
+        def __iter__(self):
+            for line in self.stringio:
+                yield line
 
 Usually the result of your program is important not only now but in the future
 as well. For this it is a good practice to store the results in file so that
@@ -60,14 +82,16 @@ the so-called file mode. ``r`` is for read-only.
     In some tutorials and also production code you may find something along the
     lines of this to interact with a file:
 
-    >>> f = open('csv_file.txt', 'r')
-    >>> file_content = f.read()
-    >>> f.close()
-    >>> print(file_content)
-    1, 2, 3
-    4, 5, 6
-    7, 8, 9
-    <BLANKLINE>
+    .. doctest:: csv_file
+
+        >>> f = open('csv_file.txt', 'r')
+        >>> file_content = f.read()
+        >>> f.close()
+        >>> print(file_content)
+        1, 2, 3
+        4, 5, 6
+        7, 8, 9
+        <BLANKLINE>
 
     This is kind of the old style of working with files when
     :ref:`the with statement <with>` did not exist yet. It has the huge
@@ -115,11 +139,14 @@ To write to a file you have to open it first, this time with ``w`` as file
 opening mode, to indicate that you want to write to the file. Then you can
 use the ``write()`` method of the file object to write to the file:
 
-.. code-block:: python
+.. doctest:: csv_file
 
-    with open('my_first_file.txt', 'w') as f:
-        f.write('This is smart.')
-        f.write('This is even smarter.')
+    >>> with open('my_first_file.txt', 'w') as f:
+    ...     f.write('This is smart.')
+    ...     f.write('This is even smarter.')
+    ...
+    14
+    21
 
 Now the content of your file would be
 
@@ -130,12 +157,14 @@ Now the content of your file would be
 Which is not nicely formatted. So you have to take care that you add the
 newline character ``\n`` and spaces accordingly:
 
-.. code-block:: python
+.. doctest:: csv_file
 
-    with open('my_first_file.txt', 'w') as f:
-        f.write('This is smart.\n')
-        f.write('This is even smarter.\n')
-
+    >>> with open('my_first_file.txt', 'w') as f:
+    ...     f.write('This is smart.\n')
+    ...     f.write('This is even smarter.\n')
+    ...
+    15
+    22
 
 Subsequently the content of your file would be
 
