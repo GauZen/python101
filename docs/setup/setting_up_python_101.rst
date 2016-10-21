@@ -41,8 +41,8 @@ and :ref:`install <installing-index>` Python 101 along with its dependencies
 
 .. attention::
 
-    The ``.`` after ``pip install -e`` is important! ``pip install -e`` is not
-    sufficient.
+    The ``.`` after ``python -m pip install -e`` is important!
+    ``python -m pip install -e`` is not sufficient.
 
 
 .. _git: https://git-scm.com/
