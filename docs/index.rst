@@ -43,6 +43,7 @@ commands and what they do.
     python/functions
     python/strings
     python/file_io
+    python/classes
 
 .. toctree::
     :maxdepth: 1
