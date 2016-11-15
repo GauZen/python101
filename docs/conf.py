@@ -16,14 +16,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 import sys
-# sys.path.insert(0, os.path.abspath('.'))
 import datetime
 import pkg_resources
 
 import sphinx_rtd_theme
 from matplotlib import cycler
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'exercises'))
 
 # -- General configuration ------------------------------------------------
 
@@ -41,7 +42,8 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
-    'matplotlib.sphinxext.plot_directive'
+    'matplotlib.sphinxext.plot_directive',
+    'python101.sphinxext'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

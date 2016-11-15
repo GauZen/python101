@@ -26,5 +26,6 @@ setup(
         'sphinx_rtd_theme',
         'numpy',
         'matplotlib',
-        'scipy'
+        'scipy',
+        'pytest'
     ])
