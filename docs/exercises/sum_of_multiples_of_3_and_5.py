@@ -1,18 +1,26 @@
 """
+.. note::
+
+    The following problem was inspired by `Problem 1 at Project Euler`_.
+
 If you list all the natural numbers below 10 that are multiples of 3 or 5, you
 get 3, 5, 6, and 9. The sum of these multiples is 23. Define a function
-according to the following definition, that computes the
+according to the following definition:
 
-Start by downloading the :exercise:`exercise template </exercises/sum_of_multiples_of_3_and_5.py>`.
-You can run tests via
+.. autofunction:: sum_of_multiples_of_3_and_5
+
+Start by downloading the
+:exercise:`exercise template </exercises/sum_of_multiples_of_3_and_5.py>` and
+editing this file. You can run tests via
 
 .. code-block:: bash
 
     $ python sum_of_multiples_of_3_and_5.py test
 
-You can also take a look at :solution:`the solution </exercises/sum_of_multiples_of_3_and_5.py>`.
+to check whether you got a correct solution. You can also take a look at
+:solution:`one possible solution </exercises/sum_of_multiples_of_3_and_5.py>`.
 
-.. autofunction:: sum_of_multiples_of_3_and_5
+.. _Problem 1 at Project Euler: https://projecteuler.net/problem=1
 
 """
 
