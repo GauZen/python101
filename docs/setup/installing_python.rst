@@ -10,6 +10,42 @@ How to install Python depends a lot on your operating system.
 macOS
 =====
 
+For macOS two popular choices for package managers exist: Homebrew_ and
+MacPorts_. Both are solid so the choice is up to you, I currently prefer
+Homebrew.
+
+
+.. _Homebrew: https://brew.sh
+.. _MacPorts: https://www.macports.org/install.php
+
+
+Homebrew
+--------
+
+#. Install the command line tools via
+
+   .. code-block:: shell
+
+       $ xcode-select --install
+
+#. Agree to the Xcode license by running
+
+   .. code-block:: shell
+
+       $ sudo xcodebuild -license
+
+#. Install Homebrew_.
+
+#. Install the required formulas by running
+
+   .. code-block:: shell
+
+       $ brew install git python3 hdf5 freetype libpng
+
+
+MacPorts
+--------
+
 #. Install the current version of Xcode_ on your Mac via the `Mac App Store`_.
 
 #. Open your terminal and install the Xcode Command Line Utilities and run
@@ -35,7 +71,6 @@ macOS
 
 .. _Xcode: https://developer.apple.com/xcode/
 .. _Mac App Store: https://itunes.apple.com/de/app/xcode/id497799835?mt=12
-.. _MacPorts: https://www.macports.org/install.php
 
 
 Ubuntu 16.04 LTS
