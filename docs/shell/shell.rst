@@ -96,7 +96,7 @@ To get to the parent directory use
 
 .. note::
 
-    In a lot of cases ``bash`` -- the shell you are using -- provides rather
+    In a lot of cases ``bash``---the shell you are using---provides rather
     intelligent *autocompletion*. To use this start typing the name of a file
     or directory and hit the ``tab`` button. If there is a unique completion
     option it is completed automatically. Else hitting tab another time will
@@ -177,6 +177,18 @@ hence results in an empty file with the name ``file1``.
     ``Ctrl + Shift + V``.
 
 
+``mkdir``
+=========
+
+This command is used to create a directory. Using
+
+.. code-block:: console
+
+    $ mkdir directory1
+
+thus creates a directory with the name ``directory1``.
+
+
 ``rm``
 ======
 
@@ -229,6 +241,9 @@ Summary
     ``touch $1``
         Create an empty file at ``$1``.
 
+    ``mkdir $1``
+        Create a directory at ``$1``.
+
     ``rm $1 $2 ... $n``
         Delete the files specified. If you want to delete a directory and its
         contents you have to use it with the ``-r`` option: ``rm -r $1``.
@@ -244,7 +259,7 @@ Exercises
 
 #. Print the content of the file to the terminal.
 
-#. Make a new directory named ``my_first_folder``
+#. Make a new directory named ``my_first_directory``
 
 #. Copy the file ``my_first_file.txt`` into this directory.
 
@@ -261,4 +276,8 @@ Exercises
 
 #. Enter the parent directory.
 
+#. List the content of your current working directory.
+
 #. Delete the directory ``my_first_directory``.
+
+#. List the content of your current working directory.
