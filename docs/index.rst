@@ -11,11 +11,12 @@ Python 101
 
     ---Aristotle (around 350 BCE)
 
-Welcome to the Python tutorial of the Institute of Materials Simulation. The
-goal of this tutorial is to introduce the basic tools used in our everyday
-scientific worklife by actually performing such tasks. We will start with a
-brief introduction to the *Unix Shell* in which we list the most common
-commands and what they do.
+Welcome to the Python tutorial of the group "Micromechanical Materials
+Modelling" of the "Institute of Mechanics and Fluid Dynamics". The goal of this
+tutorial is to introduce the basic tools used in our everyday scientific
+worklife by actually performing such tasks. We will start with a brief
+introduction to the *Unix Shell* in which we list the most common commands and
+what they do.
 
 .. rubric:: Contents
 
