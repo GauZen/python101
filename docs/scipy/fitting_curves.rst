@@ -1,7 +1,7 @@
 .. _sec_scipy_fitting_curves:
 
 ==============
-Fitting Curves
+Fitting curves
 ==============
 
 The routine used for fitting curves is part of the :mod:`scipy.optimize` module

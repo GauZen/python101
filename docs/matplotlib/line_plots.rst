@@ -1,7 +1,7 @@
 .. _sec_matplotlib_line_plots:
 
 ==========
-Line Plots
+Line plots
 ==========
 
 The most common plot you see in scientific publications may well be a so-called

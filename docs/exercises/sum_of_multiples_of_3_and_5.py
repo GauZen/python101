@@ -48,7 +48,7 @@ def sum_of_multiples_of_3_and_5(n):
     # end solution
 
 # -----------------------------------------------------------------------------
-# In the following the tests for this exercise are given -- do not modify them.
+# In the following the tests for this exercise are given---do not modify them.
 import sys
 import pytest
 

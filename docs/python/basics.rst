@@ -46,7 +46,7 @@ can write Python commands there and execute them.
     interpreter or be used in a Python script.
 
 
-Python as an Interactive Calculator
+Python as an interactive calculator
 ===================================
 
 To get your feet wet with Python you can use the Python interpreter as a
@@ -89,7 +89,7 @@ be complex and run a complete simulation of a car crash. You decide how simple
 they are.
 
 
-Your First Python Script
+Your first Python script
 ========================
 
 We will start with the infamous `Hello, World! Program`_. Open a new terminal,
@@ -147,7 +147,7 @@ script!
    https://en.wikipedia.org/wiki/%22Hello,_World!%22_program
 
 
-The ``print`` Function
+The ``print`` function
 ======================
 
 The function you used in your first Python script, the :func:`print` function,
@@ -174,7 +174,7 @@ them and nothing more. Now wrap the mathematical expressions in the
 If you execute the script again you should see the expected output.
 
 
-Integers, Floats and Strings
+Integers, floats and strings
 ============================
 
 In the previous examples you worked with integers, floating-point numbers, and
@@ -293,7 +293,7 @@ them using ``,`` and you are good to go. How this works is part of the section
 :ref:`sec_functions`.
 
 
-User Input
+User input
 ==========
 
 In some cases you may want to ask the user of your script to provide some

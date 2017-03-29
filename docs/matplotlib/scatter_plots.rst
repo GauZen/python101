@@ -1,7 +1,7 @@
 .. _sec_matplotlib_scatter_plots:
 
 =============
-Scatter Plots
+Scatter plots
 =============
 
 When your data does not have a sequence but is still characterized by data

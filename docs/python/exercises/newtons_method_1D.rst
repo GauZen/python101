@@ -1,7 +1,7 @@
 .. _sec_newtons_method_1d:
 
 ====================
-Newton's Method (1D)
+Newton's method (1D)
 ====================
 
 Newton's method is a rather popular iterative root finding algorithm. Starting

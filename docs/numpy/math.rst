@@ -22,7 +22,7 @@ the functions and classes may be used via
 The functions that require this import are indicated by this usage.
 
 
-Componentwise Math Operations
+Componentwise math operations
 =============================
 
 NumPy :class:`arrays <numpy.ndarray>` support the typical math operations

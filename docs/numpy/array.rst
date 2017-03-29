@@ -7,7 +7,7 @@ Array
 The NumPy :class:`array <numpy.ndarray>` is the underlying mechanism that makes
 NumPy so convenient and efficient.
 
-Creating Arrays
+Creating arrays
 ===============
 
 A NumPy :class:`array <numpy.ndarray>` is easily initialized via
@@ -74,14 +74,14 @@ arrays. But there are also other methods to initialize
       array([ 0.3,  0.4,  0.5,  0.6])
 
 
-Array Attributes
+Array attributes
 ================
 
 The :class:`arrays <numpy.ndarray>` also provide some information about
 themselves which can be accessed by its attributes.
 
 
-Number of Dimensions
+Number of dimensions
 --------------------
 
 The :attr:`ndim <numpy.ndarray.ndim>` attribute of an array is the amount of
@@ -130,7 +130,7 @@ So essentially it is the product sum of the
 :attr:`shape <numpy.ndarray.shape>`.
 
 
-Accessing Data
+Accessing data
 ==============
 
 Similarly to :class:`lists <list>` and :class:`tuples <tuple>` data is accessed

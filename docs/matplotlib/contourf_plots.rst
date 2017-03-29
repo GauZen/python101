@@ -1,7 +1,7 @@
 .. _sec_matplotlib_contourf_plots:
 
 ==============
-Contourf Plots
+Contourf plots
 ==============
 
 :func:`~matplotlib.pyplot.contourf`

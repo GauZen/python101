@@ -1,7 +1,7 @@
 .. _sec_flow_control:
 
 ============
-Flow Control
+Flow control
 ============
 
 .. epigraph::
@@ -23,7 +23,7 @@ experience and creativity to use the control flow tools to structure your code
 in a way that complex tasks can be handled.
 
 
-Boolean Expressions
+Boolean expressions
 ===================
 Knowing boolean expressions is essential for the control flow of a program.
 Python handles this rather intuitively. The most important boolean operations
@@ -128,7 +128,7 @@ The most important construct using boolean expressions is introduced in the
 following.
 
 
-The ``if`` Statement
+The ``if`` statement
 ====================
 
 A construct every programming language provides is the
@@ -196,7 +196,7 @@ Zero
 And you can add as many :ref:`elifs <elif>` as you want.
 
 
-The ``while`` Loop
+The ``while`` loop
 ==================
 
 Sometimes it is necessary to perform a routine until a certain condition is

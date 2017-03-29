@@ -1,7 +1,7 @@
 .. _sec_matplotlib_pcolormesh:
 
 ================
-Pcolormesh Plots
+Pcolormesh plots
 ================
 
 :func:`~matplotlib.pyplot.pcolormesh`

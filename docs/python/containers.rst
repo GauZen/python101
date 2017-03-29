@@ -208,7 +208,7 @@ the :meth:`dict.get` method:
 'fallback'
 
 
-Common Operations
+Common operations
 =================
 
 Length
@@ -231,7 +231,7 @@ This information can be accessed using the :func:`len` function:
 3
 
 
-Membership Check
+Membership check
 ----------------
 
 >>> x = [1, 2, 3]

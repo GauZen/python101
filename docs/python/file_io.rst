@@ -52,7 +52,7 @@ you can work with them later on if necessary. This is called file input and
 output, or in short: file IO.
 
 
-Reading from a File
+Reading from a file
 ===================
 
 The best way to open a file in Python is by using
@@ -132,7 +132,7 @@ line. To circumvent this use the :meth:`~str.strip` method of the line string:
     Line 2 -- 7, 8, 9
 
 
-Writing to a File
+Writing to a file
 =================
 
 To write to a file you have to open it first, this time with ``w`` as file

@@ -1,7 +1,7 @@
 .. _sec_strip_and_split:
 
 ===============
-Split and Strip
+Split and strip
 ===============
 
 From time to time you may want to split a string by a delimiting character like

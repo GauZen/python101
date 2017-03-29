@@ -46,7 +46,7 @@ Let's take a closer look at the parts that make up a function.
     https://en.wikipedia.org/wiki/Divide_and_conquer_algorithms
 
 
-Components of a Function
+Components of a function
 ========================
 
 Name
@@ -63,7 +63,7 @@ There are a lot more :ref:`python:built-in-funcs`, among them, for example,
 :class:`float() <float>`.
 
 
-Positional Arguments
+Positional arguments
 --------------------
 
 :class:`float() <float>` is a function that lets you convert a number or a
@@ -100,7 +100,7 @@ A similar function also exists for integer. It is the function
 :class:`int() <int>`.
 
 
-Keyword Arguments
+Keyword arguments
 -----------------
 
 :class:`int() <int>` is a function that lets you convert a number or a string
@@ -164,7 +164,7 @@ For this you would have to chain :class:`int() <int>` and
 1
 
 
-Defining a Function
+Defining a function
 ===================
 
 A function is defined by starting with the ``def`` keyword. Subsequently you
@@ -234,7 +234,7 @@ False
 True
 
 
-Functions as Function Arguments
+Functions as function arguments
 ===============================
 
 You are able to pass almost anything to a function---even functions itself!

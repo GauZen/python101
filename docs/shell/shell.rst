@@ -1,7 +1,7 @@
 .. _sec_shell:
 
 ==============
-The Unix Shell
+The Unix shell
 ==============
 
 .. epigraph::
