@@ -9,7 +9,7 @@ The Unix shell
     "The Linux philosophy is 'Laugh in the face of danger'. Oops. Wrong One.
     'Do it yourself'. Yes, that's it."
 
-    -- Linus Torvalds
+    ---Linus Torvalds
 
 We could try to think of a neat way of defining what a *Unix shell* is, but
 thankfully Wikipedia_ comes to the rescue:

@@ -29,9 +29,12 @@ what they do.
 
 .. toctree::
     :maxdepth: 1
-    :caption: Shell
+    :caption: Tools
 
-    shell/shell
+    tools/the_right_tool_for_the_job
+    tools/shell
+    tools/text_editors
+    tools/version_control_systems
 
 .. toctree::
     :maxdepth: 1

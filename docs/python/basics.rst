@@ -235,7 +235,16 @@ name must comply:
 #. It must comprise only letters, numbers, and the underscore character.
 #. It must not begin with a number.
 
-Other than that anything goes. To assign a value to a variable you use the
+Other than that anything goes.
+
+.. warning::
+
+    Although anything else is a viable variable name, you should take special
+    care not to use names of built-in objects like, e.g., ``int``. If you name
+    a variable after some function or class it is not usable anymore in the
+    subsequent code.
+
+To assign a value to a variable you use the
 equal sign ``=`` with the variable name on the left and the value on the right:
 
 >>> my_first_variable = 21
