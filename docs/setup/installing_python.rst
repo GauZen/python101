@@ -73,6 +73,16 @@ MacPorts
 .. _Mac App Store: https://itunes.apple.com/de/app/xcode/id497799835?mt=12
 
 
+Fedora 25
+=========
+
+Install the required packages via
+
+.. code-block:: shell
+
+    $ sudo dnf install python3-tkinter hdfview
+
+
 Ubuntu 16.04 LTS
 ================
 
@@ -81,3 +91,13 @@ Install the required packages via
 .. code-block:: shell
 
     $ sudo apt-get install cmake gfortran git libfreetype6-dev libatlas-dev liblapack-dev libhdf5-dev python3-dev python3-venv python3-pip python3-tk
+
+
+Ubuntu 16.10
+============
+
+Install the required packages via
+
+.. code-block:: shell
+
+    sudo apt-get install python3-venv python3-tk hdfview
