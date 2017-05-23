@@ -49,7 +49,7 @@ given.
 Atom
 ====
 
-`Atom`_
+`Atom`_ is a text editor made by GitHub.
 
 **Advantages**
 
@@ -70,8 +70,8 @@ Atom
 Sublime Text 3
 ==============
 
-`Sublime Text`_
-`Package Control`_
+`Sublime Text`_ is a text editor made by a small team of developers. Proper
+support for packages is supplied by`Package Control`_.
 
 **Advantages**
 
@@ -92,10 +92,31 @@ Sublime Text 3
 .. _Package Control: https://packagecontrol.io/
 
 
+Visual Studio Code
+==================
+
+`Visual Studio Code`_ is a text editor made by Microsoft.
+
+**Advantages**
+
+- support for different encodings
+- highly hackable
+- `open-source <https://github.com/Microsoft/vscode>`_
+- easy to learn
+
+**Disadvantages**
+
+- may not be installed on all machines you have to work with
+
+.. _Visual Studio Code: https://code.visualstudio.com/
+
+
 Vim
 ===
 
-`Vim`_ `vim-plug`_
+`Vim`_ is a text editor made by the community lead by Bram Moolenaar. Support
+for packages is built-in as of vim 8, but due to backward compatibility the
+most popular package manager is `vim-plug`_.
 
 **Advantages**
 
@@ -116,7 +137,8 @@ Vim
 Emacs
 =====
 
-`Emacs`_
+`Emacs`_ is a text editor made by the community lead by the Free Software
+Foundation.
 
 **Advantages**
 
