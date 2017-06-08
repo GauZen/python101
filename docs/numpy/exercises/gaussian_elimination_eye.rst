@@ -5,7 +5,7 @@ Gaussian Elimination (Eye Variant)
 ==================================
 
 Solving systems of linear equations is one of the basic tasks in numerical
-mathematics -- hence it is also one of the basic tasks in computational
+mathematics---hence it is also one of the basic tasks in computational
 materials science. A system of linear equations like
 
 .. math::
