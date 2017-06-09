@@ -1,8 +1,8 @@
 .. _sec_numpy_gaussian_elimination_eye:
 
-==================================
+**********************************
 Gaussian Elimination (Eye Variant)
-==================================
+**********************************
 
 Solving systems of linear equations is one of the basic tasks in numerical
 mathematics---hence it is also one of the basic tasks in computational

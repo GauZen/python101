@@ -1,8 +1,8 @@
 .. _sec_heaviside_step_function:
 
-=======================
+***********************
 Heaviside step function
-=======================
+***********************
 
 The `Heaviside step function`_ can be defined as
 

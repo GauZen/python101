@@ -1,8 +1,8 @@
 .. _sec_comments:
 
-========
+********
 Comments
-========
+********
 
 Once your programs grow longer and the logic gets more and more complicated it
 is a *very* good idea to place *meaningful* comments in your code. This makes
@@ -32,21 +32,6 @@ into a file and execute it you should only see
 
     Now you see me.
     Are you still seeing me?
-
-.. note::
-
-    In all the python files provided in this tutorial you will see
-
-    .. code-block:: python
-
-        # -*- coding: utf-8 -*-
-
-    as the first line. As it is a comment it should not have any special
-    meaning, but it does. This line tells the Python interpreter that the
-    source code is written with the UTF-8_ character encoding. It does not
-    actively do something in your code, though.
-
-.. _UTF-8: https://en.wikipedia.org/wiki/UTF-8
 
 
 Summary

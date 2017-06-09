@@ -1,8 +1,8 @@
 .. _sec_matplotlib:
 
-==========
+##########
 Matplotlib
-==========
+##########
 
 .. epigraph::
 

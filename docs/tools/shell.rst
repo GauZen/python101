@@ -43,7 +43,7 @@ sections.
 This command is used to show the path to the current working directory. It is
 usually used to see where you currently are.
 
-.. code-block:: console
+.. code-block:: shell
 
     $ pwd
 
@@ -54,20 +54,20 @@ usually used to see where you currently are.
 This command is used to show the contents of the directory you specify as
 argument.
 
-.. code-block:: console
+.. code-block:: shell
 
     $ ls directory1
 
 If you do not provide anything besides ``ls`` it prints the contents
 of the current working directory.
 
-.. code-block:: console
+.. code-block:: shell
 
     $ ls
 
 For a more verbose version you may use the ``-l`` options:
 
-.. code-block:: console
+.. code-block:: shell
 
     $ ls -l
 
@@ -83,13 +83,13 @@ For a more verbose version you may use the ``-l`` options:
 This command is used to change the directory to the one specified as argument.
 If no argument is provided you are changing to your home directory.
 
-.. code-block:: console
+.. code-block:: shell
 
     $ cd directory1
 
 To get to the parent directory use
 
-.. code-block:: console
+.. code-block:: shell
 
     $ cd ..
 
@@ -108,7 +108,7 @@ To get to the parent directory use
 
 This command is used to print the contents of the files specified as arguments.
 
-.. code-block:: console
+.. code-block:: shell
 
     $ cat file1 file2 ... fileN
 
@@ -118,20 +118,20 @@ This command is used to print the contents of the files specified as arguments.
 
 This command is used to copy files. For example
 
-.. code-block:: console
+.. code-block:: shell
 
     $ cp file1 file2
 
 copies ``file1`` to ``file2``. If you want to copy a lot of files to another
 directory use
 
-.. code-block:: console
+.. code-block:: shell
 
     $ cp file1 file2 ... fileN directory1/
 
 Copying a whole directory requires you to use the ``-r`` option:
 
-.. code-block:: console
+.. code-block:: shell
 
     $ cp -r directory1 directory2
 
@@ -141,21 +141,21 @@ Copying a whole directory requires you to use the ``-r`` option:
 
 This command is used to move files. For example
 
-.. code-block:: console
+.. code-block:: shell
 
     $ mv file1 file2
 
 essentially renames ``file1`` to ``file2``. To move several files into a
 directory use
 
-.. code-block:: console
+.. code-block:: shell
 
     $ mv file1 file2 ... fileN directory1/
 
 As opposed to ``cp`` the ``mv`` command can move whole directories without
 using the ``-r`` option:
 
-.. code-block:: console
+.. code-block:: shell
 
 
 ``touch``
@@ -163,7 +163,7 @@ using the ``-r`` option:
 
 This command is used to create an empty file. Using
 
-.. code-block:: console
+.. code-block:: shell
 
     $ touch file1
 
@@ -182,7 +182,7 @@ hence results in an empty file with the name ``file1``.
 
 This command is used to create a directory. Using
 
-.. code-block:: console
+.. code-block:: shell
 
     $ mkdir directory1
 
@@ -194,7 +194,7 @@ thus creates a directory with the name ``directory1``.
 
 This command is used to delete files and directories. Hence
 
-.. code-block:: console
+.. code-block:: shell
 
     $ rm file1
 

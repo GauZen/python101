@@ -1,8 +1,8 @@
 .. _sec_numpy_math:
 
-====
+****
 Math
-====
+****
 
 The goal of NumPy is to provide functions and classes that make numerical
 computations easier. For an extensive overview see the section

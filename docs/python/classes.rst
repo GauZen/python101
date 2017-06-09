@@ -1,8 +1,8 @@
 .. _sec_classes:
 
-=======
+*******
 Classes
-=======
+*******
 
 Especially for larger code bases the rather mathematical way of programming
 may become slightly convoluted. A paradigm that tries to alleviate this is

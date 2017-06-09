@@ -1,8 +1,8 @@
 .. _sec_flow_control:
 
-============
+************
 Flow control
-============
+************
 
 .. epigraph::
 

@@ -1,8 +1,8 @@
 .. _sec_installing_python:
 
-=================
+*****************
 Installing Python
-=================
+*****************
 
 How to install Python depends a lot on your operating system.
 

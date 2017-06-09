@@ -1,8 +1,8 @@
 .. _sec_file_io:
 
-=======
+*******
 File IO
-=======
+*******
 
 .. testsetup:: csv_file
 

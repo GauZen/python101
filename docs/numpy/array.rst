@@ -1,8 +1,8 @@
 .. _sec_numpy_array:
 
-=====
+*****
 Array
-=====
+*****
 
 The NumPy :class:`array <numpy.ndarray>` is the underlying mechanism that makes
 NumPy so convenient and efficient.

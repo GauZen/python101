@@ -1,8 +1,8 @@
 .. _sec_scipy_fitting_curves:
 
-==============
+**************
 Fitting curves
-==============
+**************
 
 The routine used for fitting curves is part of the :mod:`scipy.optimize` module
 and is called :func:`scipy.optimize.curve_fit`. So first said module has to be

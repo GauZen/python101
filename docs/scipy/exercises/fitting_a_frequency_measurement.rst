@@ -1,8 +1,8 @@
 .. _sec_fitting_a_frequency_measurement:
 
-===============================
+*******************************
 Fitting a frequency measurement
-===============================
+*******************************
 
 Use the data provided :download:`here <frequency_measurement.csv>` and compute
 the amplitude :math:`A`, the frequency :math:`f`, and the phase offset

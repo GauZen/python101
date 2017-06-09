@@ -1,8 +1,8 @@
 .. _sec_containers:
 
-==========
+**********
 Containers
-==========
+**********
 
 At one point you may want to keep objects like strings or numbers in another
 object to show that they are strongly related. These objects that contain other
@@ -43,9 +43,9 @@ Accessing values for the list is done like this:
 
 .. note::
 
-    As you can see in the example above specifying x[1] did not give you the
-    first element of the list, but the second. This is due to Python starting
-    indexing at 0!
+    As you can see in the example above specifying ``x[1]`` did not give you
+    the first element of the list, but the second. This is due to Python
+    starting indexing at 0!
 
 With this you can also change values in a list
 
@@ -268,9 +268,12 @@ Summary
 
     - use :class:`lists <list>` if the order is important and you may need to
       modify the container.
+
     - use :class:`tuples <tuple>` if the order is important and the container
       is fixed.
+
     - use :class:`sets <set>` if order is not important and you want to ensure
       uniqueness inside the container.
+
     - use :class:`dictionaries <dictionary>` if you want to store key-value
       pairs.

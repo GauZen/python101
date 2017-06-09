@@ -1,8 +1,8 @@
 .. _sec_numpy:
 
-=====
+#####
 NumPy
-=====
+#####
 
 NumPy is a third-party package for Python that provides utilities for numerical
 programming with Python. It is commonly imported via

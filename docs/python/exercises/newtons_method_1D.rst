@@ -1,8 +1,8 @@
 .. _sec_newtons_method_1d:
 
-====================
+********************
 Newton's method (1D)
-====================
+********************
 
 Newton's method is a rather popular iterative root finding algorithm. Starting
 at an initial guess :math:`x_0` it tries to find better and better

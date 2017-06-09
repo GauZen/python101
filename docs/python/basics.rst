@@ -21,13 +21,13 @@ Python script.
     ``(python101)`` in front of your command line prompt you need to activate
     it using
 
-    .. code-block:: console
+    .. code-block:: shell
 
         $ source ~/.virtualenvs/python101/bin/activate
 
 Execute the following command to start the interactive Python interpreter:
 
-.. code-block:: console
+.. code-block:: shell
 
     $ python
 
@@ -79,7 +79,7 @@ execution of the operators.
 
 To leave the Python interpreter you either execute
 
-    >>> quit()  # doctest:+SKIP
+>>> quit()  # doctest:+SKIP
 
 or you press ``Ctrl + D``. Besides the interactive Python interpreter you can
 also write scripts with Python. Scripts are files that can be executed from the
@@ -96,24 +96,27 @@ We will start with the infamous `Hello, World! Program`_. Open a new terminal,
 activate your virtual environment, and create a new file named
 ``hello_world.py`` via
 
-.. code-block:: console
+.. code-block:: shell
 
     $ touch hello_world.py
 
 Open it with your favorite text editor, e.g., *Atom* or *SublimeText*. In the
 former case you would open the file via
 
-.. code-block:: console
+.. code-block:: shell
 
     $ atom hello_world.py
 
-Now type (not copy!) the following into the file::
+Now type (not copy!) the following into the file
+
+.. code-block:: python
+    :caption: hello_world.py
 
     print('Hello, World!')
 
 Save the file, switch to your command line interface, and execute
 
-.. code-block:: console
+.. code-block:: shell
 
     $ python hello_world.py
 
@@ -158,7 +161,7 @@ creating a new file ``math_expressions.py`` and enter several mathematical
 expressions like you did earlier. Save the file, switch to your terminal and
 execute the file via
 
-.. code-block:: console
+.. code-block:: shell
 
     python math_expressions.py
 
@@ -331,15 +334,14 @@ Imports
 =======
 
 Sometimes the features that Python offers by default are not enough. What if
-you want to use the :math:`\sin(x)` function? For more specializied topics
+you want to use the :math:`\sin(x)` function? For more specialized topics
 Python offers modules or packages, either ones that already ship with every
 Python installation or packages from external parties. The packages that Python
 ships with are called the `standard library`_. External packages may be, e.g.,
 NumPy_ and SciPy_ for scientific computing with Python, or Matplotlib_ for
 plotting.
 
-You activate this additional functionality by *importing* these packages in
-your script:
+You activate this additional functionality by *importing* these packages:
 
 >>> import math
 

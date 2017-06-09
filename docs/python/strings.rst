@@ -1,8 +1,8 @@
 .. _sec_strings:
 
-=======
+*******
 Strings
-=======
+*******
 
 You have worked with them for a while now: :class:`strings <str>`. They offer a
 large amount of ways to work with text, of which a few selected ones are
