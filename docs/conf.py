@@ -411,16 +411,15 @@ plot_formats = [
 ]
 plot_apply_rcparams = True
 rtd_black = '#404040'
-mpl_black = '#888888'
+mpl_black = '#999999'
 plot_rcparams = {
-    'image.cmap': 'viridis',
     'savefig.bbox': 'tight',
     'savefig.transparent': True,
     'lines.linewidth': 2,
     'legend.frameon': False,
     'legend.fontsize': 'medium',
     'text.color': rtd_black,
-    'font.size': 13,
+    'font.size': 16,
     'font.sans-serif': [
         'Lato',
         'proxima-nova',

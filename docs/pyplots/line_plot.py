@@ -7,6 +7,7 @@ y0 = np.sin(2*np.pi*x)
 y1 = np.cos(2*np.pi*x)
 
 # Generate the plot
-plt.plot(x, y0)
-plt.plot(x, y1)
-plt.show()
+fig, ax = plt.subplots()
+ax.plot(x, y0)
+ax.plot(x, y1)
+plt.show(fig)
