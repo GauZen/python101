@@ -36,8 +36,7 @@ The features a good text editor should have:
 To gain more insight about the performance of different text editors take a
 look at this `editor performance comparison`_.
 
-In the following a brief introduction to the text editors I recommended is
-given.
+In the following a brief introduction to the text editors I recommend is given.
 
 .. _Unicode: https://en.wikipedia.org/wiki/Unicode
 .. _syntax highlighting: https://en.wikipedia.org/wiki/Syntax_highlighting
