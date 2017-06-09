@@ -19,8 +19,8 @@ setup(
     url='https://github.com/ZeeD26/python101',
     license='BSD',
     author='Dominik Steinberger',
-    author_email='dominik.steinberger@fau.de',
-    description='Python tutorial for materials scientists.',
+    author_email='dominik.steinberger@imfd.tu-freiberg.de',
+    description='Python tutorial for computational materials scientists.',
     install_requires=[
         'Sphinx',
         'sphinx_rtd_theme',
