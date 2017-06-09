@@ -1,8 +1,8 @@
 .. _sec_shell:
 
-==============
+**************
 The Unix shell
-==============
+**************
 
 .. epigraph::
 
@@ -254,7 +254,7 @@ Exercises
 
 #. Create an empty file called ``my_first_file.txt``
 
-#. Open the file with your text editor and fill it with something other and
+#. Open the file with your text editor and fill it with something other than
    ``asdf``. Save and close afterwards.
 
 #. Print the content of the file to the terminal.

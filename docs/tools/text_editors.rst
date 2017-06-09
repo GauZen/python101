@@ -1,8 +1,8 @@
 .. _sec_text_editors:
 
-============
+************
 Text editors
-============
+************
 
 The features a good text editor should have:
 
