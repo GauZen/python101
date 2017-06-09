@@ -12,7 +12,7 @@ Best practices
 - config files with sensitive information, e.g., passwords, private keys
 - editor backups
 - generated files, e.g., executables, HTML documentation
-- OS specific files, e.g., ``Thumbs.db`, `.DS_Store`
+- OS specific files, e.g., ``Thumbs.db``, ``.DS_Store``
 
 
 SVN
@@ -26,6 +26,7 @@ git_
 
 
 .. _git: https://git-scm.com/
+
 
 Ignoring files
 --------------
