@@ -13,7 +13,7 @@ Start by downloading the
 :exercise:`exercise template </exercises/sum_of_multiples_of_3_and_5.py>` and
 editing this file. You can run tests via
 
-.. code-block:: bash
+.. code-block:: console
 
     $ python sum_of_multiples_of_3_and_5.py test
 
