@@ -2,11 +2,8 @@ r"""
 The `Heaviside step function`_ can be defined as
 
 .. math::
-    :nowrap:
 
-    \begin{equation}
-        H(x) = \begin{cases} 0, &x < 0, \\ 1, &x \ge 0. \end{cases}
-    \end{equation}
+    H(x) = \begin{cases} 0, &x < 0, \\ 1, &x \ge 0. \end{cases}
     
 Write a function that implements the Heaviside step function following the
 given definition:
