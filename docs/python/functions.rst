@@ -310,10 +310,10 @@ Exercises
     :maxdepth: 1
 
     exercises/heaviside_step_function
-    exercises/newtons_method_1D
     exercises/sum_of_multiples_of_3_and_5
     exercises/even_fibonacci_numbers
     exercises/prime_factorization
+    exercises/newtons_method_1D
 
 .. rubric:: Footnotes
 
