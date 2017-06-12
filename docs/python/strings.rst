@@ -4,9 +4,36 @@
 Strings
 *******
 
-You have worked with them for a while now: :class:`strings <str>`. They offer a
-large amount of ways to work with text, of which a few selected ones are
-outlined in the following.
+You have worked with them for a while now: :class:`strings <str>`. In principle
+strings are containers of characters in a certain order. As such they are
+somewhat similar to :class:`lists` <list>`, and also support, e.g., indexing.
+
+>>> my_first_string = 'Hello, World!'
+>>> my_first_string[7:]
+'World!'
+>>> my_first_string[::-1]
+'!dlroW ,olleH'
+
+They offer a large amount of ways to work with text, of which a few selected
+ones are outlined in the following.
+
+
+``lower``
+=========
+
+Returns the lowercase version of the string.
+
+>>> 'Hello, World!'.lower()
+'hello, world!'
+
+
+``upper``
+=========
+
+Returns the uppercase version of the string.
+
+>>> 'Hello, World!'.upper()
+'HELLO, WORLD!'
 
 
 ``split``
@@ -102,3 +129,4 @@ Exercises
 .. toctree::
 
     exercises/split_and_strip
+    exercises/is_palindrome_string
