@@ -46,7 +46,7 @@ def even_fibonacci_numbers(n):
     s = 0
     t_previous = 0
     t = 1
-    while t <= n:
+    while t < n:
 
         if t % 2 == 0:
             s += t
@@ -66,12 +66,12 @@ import pytest
     ('n', 'expected'),
     [
         (0, 0),
-        (1, 0),
-        (2, 2),
-        (7, 2),
-        (8, 10),
-        (33, 10),
-        (34, 44)
+        (2, 0),
+        (3, 2),
+        (8, 2),
+        (9, 10),
+        (34, 10),
+        (35, 44)
     ])
 def test_correct_result(n, expected):
     assert even_fibonacci_numbers(n) == expected
