@@ -1,7 +1,7 @@
 .. _sec_setting_up_python_101:
 
 *********************
-Setting Up Python 101
+Setting up Python 101
 *********************
 
 First we will set up a *virtual environment* using the :mod:`venv` module of
