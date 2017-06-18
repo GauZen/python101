@@ -411,7 +411,7 @@ plot_formats = [
 ]
 plot_apply_rcparams = True
 rtd_black = '#404040'
-mpl_black = '#999999'
+mpl_black = '#555555'
 plot_rcparams = {
     'savefig.bbox': 'tight',
     'savefig.transparent': True,
@@ -429,18 +429,6 @@ plot_rcparams = {
     ],
     'axes.edgecolor': mpl_black,
     'axes.labelcolor': mpl_black,
-    'axes.prop_cycle': cycler(
-        color=[
-            '#E41A1C',
-            '#377EB8',
-            '#4DAF4A',
-            '#984EA3',
-            '#FF7F00',
-            '#FFFF33',
-            '#A65628',
-            '#F781BF',
-            '#999999'
-        ]),
     'xtick.color': mpl_black,
     'ytick.color': mpl_black,
     'grid.color': mpl_black
