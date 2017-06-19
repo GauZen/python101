@@ -10,6 +10,9 @@ may become slightly convoluted. A paradigm that tries to alleviate this is
 of a rectangle class. Each rectangle has a length and a width, from which one
 can compute its area and perimeter. Here is the definition:
 
+.. _object-oriented programming:
+    https://en.wikipedia.org/wiki/Object-oriented_programming
+
 .. testcode:: geometric_classes
 
     class Rectangle:
@@ -138,9 +141,6 @@ the output would be
     Width: 7
     Area: 35
     Perimeter: 24
-
-.. _object-oriented programming:
-    https://en.wikipedia.org/wiki/Object-oriented_programming
 
 
 Exercises
