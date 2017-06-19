@@ -143,6 +143,126 @@ the output would be
     Perimeter: 24
 
 
+Inheritance
+===========
+
+A square is a special case of a rectangle, i.e., a rectangle with equal sides.
+As the computation of the geometrical properties remains the same, one option
+of initializing a square could be
+
+.. testcode:: geometric_classes
+
+    square = Rectangle(length=2, width=2)
+
+But maybe you want to be more explicit when initializing squares. This is where
+inheritance kicks in. Let us take a look at the definition of a ``Square``
+class that inherits from the previously defined ``Rectangle`` class:
+
+.. testcode:: geometric_classes
+
+    class Square(Rectangle):
+        """A square that is described by its side length."""
+
+        def __init__(self, side_length):
+            super().__init__(length=side_length, width=side_length)
+
+As opposed to the ``Rectangle`` class the name of the ``Square`` class is
+followed by parenthesis containing ``Rectangle``. This tells Python that the
+``Rectangle`` class is the *superclass* of ``Square``, i.e., ``Square``
+inherits from ``Rectangle``. To inherit means that, if not otherwise defined,
+``Square`` has the exact same method definitions as its superclass
+``Rectangle``.
+
+But as the ``__init__`` method of ``Rectangle`` takes the arguments ``length``
+and ``width``, which is not required for the definition of a square, we can
+simplify it. Now it takes only one argument ``side_length``. If we stored it as
+we did in the ``Rectangle`` class, i.e., as
+
+.. code-block:: python
+
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+The methods that ``Square`` inherits from ``Rectangle`` would fail to be
+callable, as they access the attributes ``length`` and ``width``, which would
+not be defined if we took this definition of the ``__init__`` method. Instead
+we could do this:
+
+.. code-block:: python
+
+    def __init__(self, side_length):
+        self.length = side_length
+        self.width = side_length
+
+So now the definition looks awfully similar to the one of the ``Rectangle``
+class. A bit too similar maybe, and we do not want to repeat ourselves.
+Another side-effect is that, should the ``__init__`` method of the
+``Rectangle`` implement some more code, it would have to be copied to
+``Square`` as well. As this is error-prone there is a way to leverage the
+method of a superclass within the child class, and this is done using the
+:func:`super` function. If used within a method definition followed by calling
+a method it will resolve to the first parent class that implements a method
+with this name and call it for the current object. So by implementing it via
+
+.. code-block:: python
+
+    def __init__(self, side_length):
+        super().__init__(length=side_length, width=side_length)
+
+we tell Python to call the ``__init__`` method of the superclass of ``Square``
+and pass the side_length for the ``length`` and ``width``.
+
+Using the class can now be done like this:
+
+.. testcode:: geometric_classes
+
+    first_square = Square(side_length=2)
+    print('Information about the first square')
+    print('Length:', first_square.length)
+    print('Width:', first_square.width)
+    print('Area:', first_square.area())
+    print('Perimeter:', first_square.perimeter())
+
+The respective output:
+
+.. testoutput:: geometric_classes
+
+    Information about the first square
+    Length: 2
+    Width: 2
+    Area: 4
+    Perimeter: 8
+
+
+Type checking
+=============
+
+.. testcode:: geometric_classes
+
+    def what_is_it(object):
+        if isinstance(object, Rectangle):
+            print('It is a rectangle.')
+        if isinstance(object, Square):
+            print('It is a square.')
+
+.. testcode:: geometric_classes
+
+    what_is_it(first_rectangle)
+
+.. testoutput:: geometric_classes
+
+    It is a rectangle.
+
+.. testcode:: geometric_classes
+
+    what_is_it(first_square)
+
+.. testoutput:: geometric_classes
+
+    It is a rectangle.
+    It is a square.
+
+
 Exercises
 =========
 
