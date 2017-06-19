@@ -237,6 +237,11 @@ The respective output:
 Type checking
 =============
 
+Checking whether an object is of a certain type, or is a child of a certain
+type, is done by using the :func:`isinstance` function. The first argument is
+the object whose type should be checked, the second argument is the class for
+which to check.
+
 .. testcode:: geometric_classes
 
     def what_is_it(object):
@@ -245,22 +250,107 @@ Type checking
         if isinstance(object, Square):
             print('It is a square.')
 
+If we use this simple function on our geometrical objects you can see how it
+works.
+
 .. testcode:: geometric_classes
 
     what_is_it(first_rectangle)
 
+As ``first_rectangle`` is a ``Rectangle``, but not a ``Square``, the output is:
+
 .. testoutput:: geometric_classes
 
     It is a rectangle.
+
+Now for the ``first_square``:
 
 .. testcode:: geometric_classes
 
     what_is_it(first_square)
 
+As ``Square`` is a specialization of ``Rectangle`` you can also see that it
+identifies as such in addition to being a ``Square``.
+
 .. testoutput:: geometric_classes
 
     It is a rectangle.
     It is a square.
+
+
+Special methods
+===============
+
+Some behavior of Python classes is implemented in terms of so-called
+:ref:`specialnames`. An example of how they may be used can be seen in the
+following:
+
+.. testcode:: geometric_classes
+
+    import math
+
+    class FreeVector:
+        """A vector that is not bound by an initial or terminal point."""
+
+        def __init__(self, vector):
+            self.vector = tuple(vector)
+
+        @property
+        def magnitude(self):
+            return math.sqrt(math.fsum(v**2 for v in self.vector))
+
+        @property
+        def direction(self):
+            magnitude = self.magnitude
+            return tuple(v/magnitude for v in self.vector)
+
+        def __repr__(self):
+            return '{self.__class__.__name__}(vector={self.vector!r})'.format(
+                self=self)
+
+        def __str__(self):
+            return str(self.vector)
+
+        def __eq__(self, other):
+            if (isinstance(other, FreeVector) and
+                    all(math.isclose(a, b) for a, b in zip(
+                        other.vector, self.vector))):
+                return True
+            else:
+                return False
+
+        def __neq__(self, other):
+            return not self.__eq__(self, other)
+
+        def __add__(self, other):
+            if not isinstance(other, FreeVector):
+                return NotImplemented
+            return tuple(a + b for a, b in zip(self.vector, other.vector))
+
+        def __sub__(self, other):
+            if not isinstance(other, FreeVector):
+                return NotImplemented
+            return tuple(a - b for a, b in zip(self.vector, other.vector))
+
+The usage may be as follows:
+
+.. doctest:: geometric_classes
+
+    >>> a = FreeVector((1, 2, 3))
+    >>> a
+    FreeVector(vector=(1, 2, 3))
+    >>> str(a)
+    '(1, 2, 3)'
+    >>> b = FreeVector((1, 2, 3))
+    >>> c = FreeVector((4, 5, 6))
+    >>> a == b
+    True
+    >>> a == c
+    False
+    >>> a + c
+    (5, 7, 9)
+    >>> c - a
+    (3, 3, 3)
 
 
 Exercises
@@ -271,3 +361,9 @@ Exercises
 
 - Define a ``Circle`` class with the radius :math:`r` as defining attribute.
   Implement the ``area`` and ``perimeter`` class accordingly.
+
+- Read and work on the book "`Building Skills in Object-Oriented Design`_" to
+  understand the process of object-oriented design.
+
+.. _building skills in object-oriented design:
+    http://buildingskills.itmaybeahack.com/book/oodesign-3.1/html/index.html
