@@ -41,8 +41,8 @@ which is stored in a file:
             '# - He: Helium\n'
             '# - Ar: Argon\n'
             '# Potentials:\n'
-            '# - He: Lennard-Jones potential with sigma/k_B = 10.22 K, sigma = 256 pm\n'
-            '# - Ar: Lennard-Jones potential with sigma/k_B = 120 K, sigma = 341 pm\n'
+            '# - He: Lennard-Jones potential with epsilon/k_B = 10.22 K, sigma = 256 pm\n'
+            '# - Ar: Lennard-Jones potential with epsilon/k_B = 120 K, sigma = 341 pm\n'
             '# Simulation box size: 100 µm x 200 µm x 300 µm\n'
             '# Periodic boundary conditions in all directions\n'
             '# Step: 0\n'
@@ -114,8 +114,8 @@ which is stored in a file:
     # - He: Helium
     # - Ar: Argon
     # Potentials:
-    # - He: Lennard-Jones potential with sigma/k_B = 10.22 K, sigma = 256 pm
-    # - Ar: Lennard-Jones potential with sigma/k_B = 120 K, sigma = 341 pm
+    # - He: Lennard-Jones potential with epsilon/k_B = 10.22 K, sigma = 256 pm
+    # - Ar: Lennard-Jones potential with epsilon/k_B = 120 K, sigma = 341 pm
     # Simulation box size: 100 µm x 200 µm x 300 µm
     # Periodic boundary conditions in all directions
     # Step: 0
