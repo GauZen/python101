@@ -74,3 +74,13 @@ what they do.
 
     scipy/introduction
     scipy/fitting_curves
+
+.. toctree::
+    :maxdepth: 1
+    :caption: File formats
+
+    file_formats/introduction
+    file_formats/csv
+    file_formats/json
+    file_formats/xml
+    file_formats/hdf5
