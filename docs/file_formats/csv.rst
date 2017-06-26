@@ -33,10 +33,7 @@ which is stored in a file:
 
 .. testsetup:: csv_file
 
-    import sys
     from io import StringIO
-    import builtins
-    from contextlib import contextmanager
 
     _files = {
         'md_result.csv': StringIO(
@@ -254,23 +251,20 @@ so that your hardcoded indices lead to wrong results. It would be better if we
 could somehow access the fields by names, e.g., ``row['id']`` to get the id of
 the record. This is where :class:`csv.DictReader` comes in.
 
-.. testcode:: csv_file
+.. doctest:: csv_file
+    :pyversion: >= 3.6
 
-    import csv
-
-    number_of_rows_to_skip = 11
-    with open('md_result.csv', 'r', newline='') as f:
-        # skip the first rows
-        for _ in range(number_of_rows_to_skip):
-            next(f)
-
-        csv_reader = csv.DictReader(f, delimiter=' ')
-        for row in csv_reader:
-            print(row)
-
-
-.. testoutput:: csv_file
-
+    >>> import csv
+    >>> number_of_rows_to_skip = 11
+    >>> with open('md_result.csv', 'r', newline='') as f:
+    ...     # skip the first rows
+    ...     for _ in range(number_of_rows_to_skip):
+    ...         next(f)
+    ...
+    ...     csv_reader = csv.DictReader(f, delimiter=' ')
+    ...     for row in csv_reader:
+    ...         print(row)
+    ...
     OrderedDict([('atom_id', '0'), ('type', 'He'), ('x-position', '5.7222e-07'), ('y-position', '4.8811e-09'), ('z-position', '2.0415e-07'), ('x-velocity', '-2.9245e+01'), ('y-velocity', '1.0045e+02'), ('z-velocity', '1.2828e+02')])
     OrderedDict([('atom_id', '1'), ('type', 'He'), ('x-position', '9.7710e-07'), ('y-position', '3.6371e-07'), ('z-position', '4.7311e-07'), ('x-velocity', '-1.9926e+02'), ('y-velocity', '2.3275e+02'), ('z-velocity', '-5.3438e+02')])
     OrderedDict([('atom_id', '2'), ('type', 'Ar'), ('x-position', '6.4989e-07'), ('y-position', '6.7873e-07'), ('z-position', '9.5000e-07'), ('x-velocity', '-1.5592e+00'), ('y-velocity', '-3.7876e+02'), ('z-velocity', '8.4091e+01')])
@@ -292,36 +286,39 @@ the record. This is where :class:`csv.DictReader` comes in.
     OrderedDict([('atom_id', '18'), ('type', 'He'), ('x-position', '1.0325e-07'), ('y-position', '9.9012e-07'), ('z-position', '3.4381e-07'), ('x-velocity', '7.1108e+01'), ('y-velocity', '1.1060e+01'), ('z-velocity', '1.5912e+01')])
     OrderedDict([('atom_id', '19'), ('type', 'Ar'), ('x-position', '4.3929e-07'), ('y-position', '7.5363e-07'), ('z-position', '9.9974e-07'), ('x-velocity', '2.3919e+02'), ('y-velocity', '1.7383e+02'), ('z-velocity', '3.3529e+02')])
 
-Now that the fields are in a dictionary, the routine to cast the field entries
-is slightly different:
+.. note::
 
-.. testcode:: csv_file
+    If you are not using at least Python 3.6 the :class:`~csv.DictReader`
+    returns regular :class:`dict` instead of its ordered variant,
+    :class:`~collections.OrderedDict`.
 
-    import csv
+Now that the fields are in an :class:`~collections.OrderedDict`, the routine to
+cast the field entries is slightly different:
 
-    number_of_rows_to_skip = 11
-    with open('md_result.csv', 'r', newline='') as f:
-        # skip the first rows
-        for _ in range(number_of_rows_to_skip):
-            next(f)
+.. doctest:: csv_file
+    :pyversion: >= 3.6
 
-        csv_reader = csv.DictReader(f, delimiter=' ')
-        for row in csv_reader:
-            for key, entry in row.items():
-                for possible_type in possible_types:
-                    try:
-                        entry = possible_type(entry)
-                    except ValueError:
-                        continue
-                    except:
-                        raise
-                    else:
-                        row[key] = entry
-                        break
-            print(row)
-
-.. testoutput:: csv_file
-
+    >>> number_of_rows_to_skip = 11
+    >>> with open('md_result.csv', 'r', newline='') as f:
+    ...     # skip the first rows
+    ...     for _ in range(number_of_rows_to_skip):
+    ...         next(f)
+    ...
+    ...     csv_reader = csv.DictReader(f, delimiter=' ')
+    ...     for row in csv_reader:
+    ...         for key, entry in row.items():
+    ...             for possible_type in possible_types:
+    ...                 try:
+    ...                     entry = possible_type(entry)
+    ...                 except ValueError:
+    ...                     continue
+    ...                 except:
+    ...                     raise
+    ...                 else:
+    ...                     row[key] = entry
+    ...                     break
+    ...         print(row)
+    ...
     OrderedDict([('atom_id', 0), ('type', 'He'), ('x-position', 5.7222e-07), ('y-position', 4.8811e-09), ('z-position', 2.0415e-07), ('x-velocity', -29.245), ('y-velocity', 100.45), ('z-velocity', 128.28)])
     OrderedDict([('atom_id', 1), ('type', 'He'), ('x-position', 9.771e-07), ('y-position', 3.6371e-07), ('z-position', 4.7311e-07), ('x-velocity', -199.26), ('y-velocity', 232.75), ('z-velocity', -534.38)])
     OrderedDict([('atom_id', 2), ('type', 'Ar'), ('x-position', 6.4989e-07), ('y-position', 6.7873e-07), ('z-position', 9.5e-07), ('x-velocity', -1.5592), ('y-velocity', -378.76), ('z-velocity', 84.091)])
@@ -343,5 +340,62 @@ is slightly different:
     OrderedDict([('atom_id', 18), ('type', 'He'), ('x-position', 1.0325e-07), ('y-position', 9.9012e-07), ('z-position', 3.4381e-07), ('x-velocity', 71.108), ('y-velocity', 11.06), ('z-velocity', 15.912)])
     OrderedDict([('atom_id', 19), ('type', 'Ar'), ('x-position', 4.3929e-07), ('y-position', 7.5363e-07), ('z-position', 9.9974e-07), ('x-velocity', 239.19), ('y-velocity', 173.83), ('z-velocity', 335.29)])
 
-Now as long as the field names are consistent across files you can write code
-that needs less maintenance.
+As long as the field names are consistent across files you can write code that
+needs less maintenance.
+
+Another way of reading CSV files is by using the :func:`~numpy.loadtxt`
+function of NumPy. By specifying the data type as you would for
+:ref:`structured_arrays` the type conversion is done for you, while retaining
+the dictionary like behavior. You can also specify a comment character that
+should be ignored and the amount of rows to skip:
+
+.. testcode:: csv_file
+
+    csv_dtype = [
+        ('atom_id', np.int32),
+        ('type', np.string_, 2),
+        ('position', np.float64, 3),
+        ('velocity', np.float64, 3)
+    ]
+    with open('md_result.csv', 'r') as f:
+        md_data = np.loadtxt(f, dtype=csv_dtype, skiprows=12)
+    print(md_data)
+
+.. testoutput:: csv_file
+
+    [ ( 0, b'He', [  5.72220000e-07,   4.88110000e-09,   2.04150000e-07], [ -29.245 ,  100.45  ,  128.28  ])
+     ( 1, b'He', [  9.77100000e-07,   3.63710000e-07,   4.73110000e-07], [-199.26  ,  232.75  , -534.38  ])
+     ( 2, b'Ar', [  6.49890000e-07,   6.78730000e-07,   9.50000000e-07], [  -1.5592, -378.76  ,   84.091 ])
+     ( 3, b'Ar', [  5.90240000e-08,   3.71380000e-07,   7.34550000e-08], [ 342.82  ,  156.82  ,  -38.991 ])
+     ( 4, b'He', [  7.67460000e-07,   8.30170000e-08,   4.85200000e-07], [ -30.45  , -379.75  , -336.32  ])
+     ( 5, b'Ar', [  1.72260000e-07,   4.60230000e-07,   4.73560000e-08], [-311.51  , -429.39  , -694.74  ])
+     ( 6, b'Ar', [  9.63940000e-07,   7.28450000e-07,   8.86230000e-07], [ -82.636 ,   45.098 ,  -10.626 ])
+     ( 7, b'He', [  5.44500000e-07,   4.63730000e-07,   6.22700000e-07], [ 158.89  ,  258.58  , -151.5   ])
+     ( 8, b'He', [  7.93220000e-07,   9.47000000e-07,   3.51940000e-08], [-197.03  ,  156.74  , -185.2   ])
+     ( 9, b'Ar', [  2.77970000e-07,   1.64870000e-07,   8.24030000e-07], [ -38.65  , -696.32  ,  216.42  ])
+     (10, b'He', [  1.18420000e-07,   6.32440000e-07,   5.09580000e-07], [-149.63  ,  422.88  ,  -76.309 ])
+     (11, b'Ar', [  2.03590000e-07,   8.33690000e-07,   9.63480000e-07], [ 484.57  , -267.41  , -352.54  ])
+     (12, b'He', [  5.10190000e-07,   2.24700000e-07,   2.38460000e-08], [-231.92  ,  -99.51  ,   32.77  ])
+     (13, b'Ar', [  3.53830000e-07,   8.45810000e-07,   7.23400000e-07], [-303.95  ,   47.316 ,  222.53  ])
+     (14, b'He', [  3.85150000e-07,   2.89400000e-07,   5.60280000e-07], [ 233.08  ,  254.18  ,  429.83  ])
+     (15, b'He', [  1.58420000e-07,   9.82250000e-07,   5.78590000e-07], [ 199.63  ,  203.11  , -425.6   ])
+     (16, b'He', [  3.68310000e-07,   7.65200000e-07,   2.98840000e-07], [  66.341 ,  222.32  ,  -97.653 ])
+     (17, b'He', [  2.86960000e-07,   1.51290000e-07,   6.40600000e-07], [  90.358 ,  -67.459 ,  -64.782 ])
+     (18, b'He', [  1.03250000e-07,   9.90120000e-07,   3.43810000e-07], [  71.108 ,   11.06  ,   15.912 ])
+     (19, b'Ar', [  4.39290000e-07,   7.53630000e-07,   9.99740000e-07], [ 239.19  ,  173.83  ,  335.29  ])]
+
+So this makes it really convenient to work with, e.g., the velocity may easily
+be computed like this:
+
+.. testcode:: csv_file
+
+    print(np.linalg.norm(md_data['velocity'], axis=1))
+
+With the output
+
+.. testoutput:: csv_file
+
+    [ 165.53317168  615.98627785  387.98565049  378.99652094  508.18147093
+      874.11550713   94.73885146  339.20775124  312.54965765  730.20064455
+      455.01614782  656.20167982  254.48575481  379.66301803  551.07856763
+      512.09488281  251.72091508  130.04611632   73.70117372  447.04374406]
