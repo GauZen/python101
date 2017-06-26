@@ -1,6 +1,6 @@
 numpy
 matplotlib
 scipy
-Sphinx
+Sphinx>=1.6
 sphinx-rtd-theme
 pytest
