@@ -750,3 +750,35 @@ library:
 
 So parsing a JSON file results in a composition of dictionaries, lists,
 strings, integers, and floats.
+
+Writing JSON files is equally simple:
+
+.. doctest:: json_file
+
+    >>> with open('my_md_result.json', 'w') as f:
+    ...     json.dump(md_data, f, indent=2)
+    ...
+
+with the ``indent`` keyword resulting in the file not written in a very
+condensed manner, but with newlines and an indentation of 2. Note that the
+following Python types can be converted out-of-the-box:
+
++----------------------------------------+--------+
+| Python                                 | JSON   |
++========================================+========+
+| :class:`dict`                          | object |
++----------------------------------------+--------+
+| :class:`list`, :class:`tuple`          | array  |
++----------------------------------------+--------+
+| :class:`str`                           | string |
++----------------------------------------+--------+
+| :class:`int`, :class:`float`,          | number |
+| :class:`int`- & :class:`float`-derived |        |
+| :class:`~enum.Enum`\ s                 |        |
++----------------------------------------+--------+
+| :data:`True`                           | true   |
++----------------------------------------+--------+
+| :data:`False`                          | false  |
++----------------------------------------+--------+
+| :data:`None`                           | null   |
++----------------------------------------+--------+
