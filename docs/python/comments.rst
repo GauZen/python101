@@ -20,7 +20,8 @@ write
 .. testcode::
 
     # In the following example you should only see
-    # ``Now you see me.`` in the terminal.
+    # ``Now you see me.``, and
+    # ``Are you still seing me?`` in the terminal.
 
     print('Now you see me.')
     # print("Now you don't.")
