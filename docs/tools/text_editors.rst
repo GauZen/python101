@@ -70,7 +70,7 @@ Sublime Text 3
 ==============
 
 `Sublime Text`_ is a text editor made by a small team of developers. Proper
-support for packages is supplied by`Package Control`_.
+support for packages is supplied by `Package Control`_.
 
 **Advantages**
 
