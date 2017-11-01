@@ -56,7 +56,7 @@ argument.
 
 .. code-block:: shell
 
-    $ ls directory1
+    $ ls <directory>
 
 If you do not provide anything besides ``ls`` it prints the contents
 of the current working directory.
@@ -64,6 +64,10 @@ of the current working directory.
 .. code-block:: shell
 
     $ ls
+
+A single ``.`` in place of ``<directory>`` also results in the contents of the
+current working directory to be printed, as ``.`` is an explicit way of
+specifying the current working directory.
 
 For a more verbose version you may use the ``-l`` options:
 
@@ -74,7 +78,7 @@ For a more verbose version you may use the ``-l`` options:
 .. note::
 
     If you have some spaces in some of your file names you have to enclose
-    the whole filename like this: ``"{filename}"``
+    the whole filename like this: ``"<filename>"``
 
 
 ``cd``
@@ -85,7 +89,7 @@ If no argument is provided you are changing to your home directory.
 
 .. code-block:: shell
 
-    $ cd directory1
+    $ cd <directory>
 
 To get to the parent directory use
 
@@ -110,7 +114,7 @@ This command is used to print the contents of the files specified as arguments.
 
 .. code-block:: shell
 
-    $ cat file1 file2 ... fileN
+    $ cat <file1> <file2> ... <fileN>
 
 
 ``cp``
@@ -120,20 +124,20 @@ This command is used to copy files. For example
 
 .. code-block:: shell
 
-    $ cp file1 file2
+    $ cp <file1> <file2>
 
-copies ``file1`` to ``file2``. If you want to copy a lot of files to another
-directory use
+copies ``<file1>`` to ``<file2>``. If you want to copy a lot of files to
+another directory use
 
 .. code-block:: shell
 
-    $ cp file1 file2 ... fileN directory1/
+    $ cp <file1> <file2> ... <fileN> <directory1>/
 
 Copying a whole directory requires you to use the ``-r`` option:
 
 .. code-block:: shell
 
-    $ cp -r directory1 directory2
+    $ cp -r <directory1> <directory2>
 
 
 ``mv``
@@ -143,19 +147,21 @@ This command is used to move files. For example
 
 .. code-block:: shell
 
-    $ mv file1 file2
+    $ mv <file1> <file2>
 
-essentially renames ``file1`` to ``file2``. To move several files into a
+essentially renames ``<file1>`` to ``<file2>``. To move several files into a
 directory use
 
 .. code-block:: shell
 
-    $ mv file1 file2 ... fileN directory1/
+    $ mv <file1> <file2> ... <fileN> <directory1>/
 
 As opposed to ``cp`` the ``mv`` command can move whole directories without
 using the ``-r`` option:
 
 .. code-block:: shell
+
+    $ mv <directory1> <directory2>
 
 
 ``touch``
@@ -165,16 +171,16 @@ This command is used to create an empty file. Using
 
 .. code-block:: shell
 
-    $ touch file1
+    $ touch <file1>
 
-hence results in an empty file with the name ``file1``.
+hence results in an empty file with the name ``<file>``.
 
 .. note::
 
     If you want to copy something from the Terminal you can not do this via the
-    key combination ``Ctrl + C`` as this is reserved for cancelling the running
-    program. Instead use ``Ctrl + Shift + C``. For pasting you also have to use
-    ``Ctrl + Shift + V``.
+    key combination :kbd:`Ctrl + C` as this is reserved for cancelling the
+    running program. Instead use :kbd:`Ctrl + Shift + C`. For pasting you also
+    have to use :kbd:`Ctrl + Shift + V`.
 
 
 ``mkdir``
@@ -184,9 +190,9 @@ This command is used to create a directory. Using
 
 .. code-block:: shell
 
-    $ mkdir directory1
+    $ mkdir <directory>
 
-thus creates a directory with the name ``directory1``.
+thus creates a directory with the name ``<directory>``.
 
 
 ``rm``
@@ -196,9 +202,9 @@ This command is used to delete files and directories. Hence
 
 .. code-block:: shell
 
-    $ rm file1
+    $ rm <file>
 
-deletes ``file1``.
+deletes ``<file>``.
 
 .. warning::
 
@@ -210,6 +216,41 @@ deletes ``file1``.
     Whatever you delete via ``rm`` is permanently deleted.
 
 
+``grep``
+========
+
+If you want to see whether some text is contained within a file you can use
+``grep``:
+
+.. code-block:: shell
+
+    $ grep <pattern> <file>
+
+with ``<pattern>`` being the text you are looking for.
+
+
+``find``
+========
+
+Find files in a directory hierarchy. This program is rather extensive and can
+perform complex search operations. In its simplest form it may be used like
+this:
+
+.. code-block:: shell
+
+    $ find <path> -name "<pattern>"
+
+It is important to put ``<pattern>`` into quotation marks to make sure the
+shell is not expanding some special characters. Special characters can, e.g.,
+be the wildcard character ``*``, which matches everything. Hence, the command
+
+.. code-block:: shell
+
+    $ find . -name "*.py"
+
+finds all Python files below the current directory.
+
+
 Summary
 =======
 
@@ -218,35 +259,43 @@ Summary
     ``pwd``
         Print the path to the directory you are currently in.
 
-    ``ls $1``
-        List the contents of directory specified by ``$1``. If you do not
-        specify a directory it defaults to your current directory.
+    ``ls <directory>``
+        List the contents of directory specified by ``<directory>``. If you do
+        not specify a directory it defaults to your current directory.
 
-    ``cd $1``
-        Change the directory to ``$1``. If you do not specify a directory you
-        go to your home directory. If you want to go back to your last
-        directory you can use ``cd -``.
+    ``cd <directory>``
+        Change the directory to ``<directory>``. If you do not specify a
+        directory you go to your home directory. If you want to go back to your
+        last directory you can use ``cd -``.
 
-    ``cat $1 $2 ... $n``
+    ``cat <file1> <file2> ... <fileN>``
         Read the files specified and print their content to the terminal.
 
-    ``cp $1 $2``
+    ``cp <file1> <file2>``
         Copy the first argument to the second argument. If you want to copy a
-        directory you have to use it with the ``-r`` option: ``cp -r $1 $2``.
+        directory you have to use it with the ``-r`` option:
+        ``cp -r <directory1> <directory2>``.
 
-    ``mv $1 $2``
+    ``mv <file1/directory1> <file2/directory2>``
         Move the first argument to the second argument. It is basically like
         renaming the first argument.
 
-    ``touch $1``
-        Create an empty file at ``$1``.
+    ``touch <file>``
+        Create an empty file at ``<file>``.
 
-    ``mkdir $1``
-        Create a directory at ``$1``.
+    ``mkdir <directory>``
+        Create a directory at ``<directory>``.
 
-    ``rm $1 $2 ... $n``
+    ``rm <file1> <file2> ... <fileN>``
         Delete the files specified. If you want to delete a directory and its
-        contents you have to use it with the ``-r`` option: ``rm -r $1``.
+        contents you have to use it with the ``-r`` option: ``rm -r <file1>``.
+
+    ``grep <pattern> <file>``
+        Search for ``<pattern>`` in ``<file>``.
+
+    ``find <path> -name "<pattern>"``
+        Find all files in ``<path>`` and below whose name is matching
+        ``<pattern>``.
 
 
 Exercises
